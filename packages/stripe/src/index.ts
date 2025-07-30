@@ -42,7 +42,7 @@ const STRIPE_ERROR_CODES = {
 } as const;
 
 const getUrl = (ctx: GenericEndpointContext, url: string) => {
-	if (url.startsWith("http")) {
+	if (url.match(/^[a-zA-Z][a-zA-Z0-9+\-.]*:/)) {
 		return url;
 	}
 	return `${ctx.context.options.baseURL}${
