@@ -446,7 +446,7 @@ export const stripe = <O extends StripeOptions>(options: O) => {
 								userId: user.id,
 								subscriptionId: subscription.id,
 								referenceId,
-								priceId,
+								priceId: priceIdToUse ?? null,
 								...params?.params?.metadata,
 							},
 						},
