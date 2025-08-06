@@ -101,7 +101,7 @@ export async function onCheckoutSessionCompleted(
 						model: "subscription",
 						update: {
 							plan: plan.name.toLowerCase(),
-							status: "active",
+							status: "paid",
 							updatedAt: new Date(),
 						},
 						where: [

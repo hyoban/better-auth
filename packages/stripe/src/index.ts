@@ -351,7 +351,7 @@ export const stripe = <O extends StripeOptions>(options: O) => {
 				}
 
 				let subscription = existingSubscription;
-				if (!subscription) {
+				if (!subscription || plan.mode === 'payment') {
 					const newSubscription = await ctx.context.adapter.create<
 						InputSubscription,
 						Subscription
